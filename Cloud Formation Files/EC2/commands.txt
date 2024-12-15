@@ -1,0 +1,14 @@
+
+
+Docker push:-
+    backend:
+        docker tag flask-app-back-end vikramvenkatapathi/cloud_term_assignment_backend:flask-app-back-end
+        docker push vikramvenkatapathi/cloud_term_assignment_backend:flask-app-back-end
+    frontend:
+        docker tag my-react-app vikramvenkatapathi/cloud_term_assignment_frontend:my-react-app
+        docker push vikramvenkatapathi/cloud_term_assignment_frontend:my-react-app
+
+Create ec2 stack:
+
+aws --region us-east-1 cloudformation create-stack --stack-name backend-ec2 --template-body file://launch_bacend_ec2.yaml
+aws cloudformation delete-stack --stack-name backend-ec2
